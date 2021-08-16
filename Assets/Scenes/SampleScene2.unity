@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 32356608}
   m_Layer: 0
   m_Name: RB
-  m_TagString: Untagged
+  m_TagString: TapDraggable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1503,7 +1503,7 @@ GameObject:
   - component: {fileID: 251896594}
   m_Layer: 0
   m_Name: LE
-  m_TagString: Untagged
+  m_TagString: TapDraggable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3453,7 +3453,7 @@ GameObject:
   - component: {fileID: 743315739}
   m_Layer: 0
   m_Name: M
-  m_TagString: Untagged
+  m_TagString: TapDraggable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5083,7 +5083,7 @@ GameObject:
   - component: {fileID: 993511749}
   m_Layer: 0
   m_Name: LB
-  m_TagString: Untagged
+  m_TagString: TapDraggable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5582,7 +5582,7 @@ GameObject:
   - component: {fileID: 1154735754}
   m_Layer: 0
   m_Name: RE
-  m_TagString: Untagged
+  m_TagString: TapDraggable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8193,7 +8193,7 @@ GameObject:
   - component: {fileID: 1687711472}
   m_Layer: 0
   m_Name: H
-  m_TagString: Untagged
+  m_TagString: TapDraggable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

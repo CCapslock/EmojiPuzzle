@@ -280,6 +280,7 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: 0.9, y: 0.858, z: 0}
   _onBestPosition: 0
+  _group: []
 --- !u!1 &32379135
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,6 +329,7 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: 1.41, y: -0.98, z: -1}
   _onBestPosition: 0
+  _group: []
 --- !u!60 &32379138
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -579,6 +581,7 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: 0, y: -0.936, z: 0}
   _onBestPosition: 0
+  _group: []
 --- !u!212 &63518136
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -696,25 +699,18 @@ MonoBehaviour:
   _levelObjects: {fileID: 1711182888}
   _endPanel: {fileID: 1234266339}
   _sqrtDistanceCheck: 1
-  _totalNumberOfParts: 10
-  _parts:
-  - {fileID: 1250673460}
-  - {fileID: 1586388805}
-  - {fileID: 1221078654}
-  - {fileID: 438577846}
-  - {fileID: 880009172}
   _successMaterial: {fileID: 2100000, guid: 287f5b2bfd0de61449a5e6766b4470c3, type: 2}
   _levels:
-  - {fileID: 1827754129}
+  - {fileID: 1971124792}
   - {fileID: 1775880872}
+  - {fileID: 1827754129}
   - {fileID: 305838127}
   - {fileID: 214685404}
   - {fileID: 1820577930}
   - {fileID: 1745677117}
-  - {fileID: 1971124792}
   - {fileID: 916353974}
   - {fileID: 921732993}
-  _levelPartsCount: 040000000300000005000000050000000600000004000000050000000300000006000000
+  _levelPartsCount: 050000000300000004000000050000000500000006000000040000000300000006000000
 --- !u!1 &105955353
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,6 +810,8 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: 1.11, y: -0.748, z: 0}
   _onBestPosition: 0
+  _group:
+  - {fileID: 1508047423}
 --- !u!60 &105955357
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1137,6 +1135,7 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: 1.004, y: 0.925, z: 0}
   _onBestPosition: 0
+  _group: []
 --- !u!60 &201297799
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1386,6 +1385,8 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: -1.027, y: 0.277, z: 0}
   _onBestPosition: 0
+  _group:
+  - {fileID: 1154735755}
 --- !u!1 &305838127
 GameObject:
   m_ObjectHideFlags: 0
@@ -1521,6 +1522,8 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: 0.978, y: 0.331, z: 0}
   _onBestPosition: 0
+  _group:
+  - {fileID: 1887834132}
 --- !u!60 &390251580
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1733,6 +1736,7 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: 0.79, y: 0.747, z: 0}
   _onBestPosition: 0
+  _group: []
 --- !u!60 &438577847
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2032,6 +2036,7 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: 0, y: -1.377, z: 0}
   _onBestPosition: 0
+  _group: []
 --- !u!212 &528457263
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2278,6 +2283,8 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: 0.97, y: 0.327, z: 0}
   _onBestPosition: 0
+  _group:
+  - {fileID: 823711900}
 --- !u!60 &637470489
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2582,6 +2589,7 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: -1.004, y: 0.925, z: 0}
   _onBestPosition: 0
+  _group: []
 --- !u!60 &658005530
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2678,6 +2686,7 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: 0, y: -0.761, z: 0}
   _onBestPosition: 0
+  _group: []
 --- !u!60 &684667924
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2894,6 +2903,8 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: 0.94, y: 0.26, z: -1}
   _onBestPosition: 0
+  _group:
+  - {fileID: 1673624697}
 --- !u!60 &690281856
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3148,6 +3159,7 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: 0, y: -0.878, z: 0}
   _onBestPosition: 0
+  _group: []
 --- !u!1 &771459417
 GameObject:
   m_ObjectHideFlags: 0
@@ -3398,6 +3410,7 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: 0.93, y: 0.29, z: 0}
   _onBestPosition: 0
+  _group: []
 --- !u!1 &777389756
 GameObject:
   m_ObjectHideFlags: 0
@@ -3576,6 +3589,8 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: -0.97, y: 0.327, z: 0}
   _onBestPosition: 0
+  _group:
+  - {fileID: 637470488}
 --- !u!60 &823711901
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3759,6 +3774,7 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: 0, y: -0.48, z: 0}
   _onBestPosition: 0
+  _group: []
 --- !u!60 &880009173
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3961,6 +3977,7 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: 0, y: -1.27, z: 0}
   _onBestPosition: 0
+  _group: []
 --- !u!60 &901232466
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4402,6 +4419,7 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: 0, y: -0.915, z: 0}
   _onBestPosition: 0
+  _group: []
 --- !u!60 &967335566
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4585,6 +4603,7 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: -0.81, y: 0.097, z: 0}
   _onBestPosition: 0
+  _group: []
 --- !u!60 &968934248
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4799,6 +4818,7 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: -0.81, y: 0.746, z: 0}
   _onBestPosition: 0
+  _group: []
 --- !u!1 &1011683034
 GameObject:
   m_ObjectHideFlags: 0
@@ -4833,6 +4853,8 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: 1.043, y: 0.413, z: 0}
   _onBestPosition: 0
+  _group:
+  - {fileID: 1417398222}
 --- !u!58 &1011683036
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5013,6 +5035,8 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: -1.05, y: 0.272, z: 0}
   _onBestPosition: 0
+  _group:
+  - {fileID: 1210903381}
 --- !u!60 &1048527916
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5291,6 +5315,8 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: 1.027, y: 0.277, z: 0}
   _onBestPosition: 0
+  _group:
+  - {fileID: 251896595}
 --- !u!114 &1200606102 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3023306852649887032, guid: ec5d497581f30ac44acbc0e029fa7a7d, type: 3}
@@ -5401,6 +5427,8 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: 1.05, y: 0.272, z: 0}
   _onBestPosition: 0
+  _group:
+  - {fileID: 1048527915}
 --- !u!60 &1210903382
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5549,6 +5577,7 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: -0.79, y: 0.747, z: 0}
   _onBestPosition: 0
+  _group: []
 --- !u!60 &1221078655
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5786,6 +5815,8 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: -1.045, y: 0.27, z: 0}
   _onBestPosition: 0
+  _group:
+  - {fileID: 1586388805}
 --- !u!60 &1250673461
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6010,6 +6041,7 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: -0.93, y: 0.29, z: 0}
   _onBestPosition: 0
+  _group: []
 --- !u!1 &1378033753
 GameObject:
   m_ObjectHideFlags: 0
@@ -6338,6 +6370,8 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: -1.056, y: 0.413, z: 0}
   _onBestPosition: 0
+  _group:
+  - {fileID: 1011683035}
 --- !u!60 &1417398223
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6532,6 +6566,7 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: 0.856, y: 0.389, z: 0}
   _onBestPosition: 0
+  _group: []
 --- !u!60 &1434537486
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6784,6 +6819,8 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: -1.11, y: -0.748, z: 0}
   _onBestPosition: 0
+  _group:
+  - {fileID: 105955356}
 --- !u!60 &1508047424
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7204,6 +7241,7 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: 0, y: -1, z: 0}
   _onBestPosition: 0
+  _group: []
 --- !u!1 &1586388802
 GameObject:
   m_ObjectHideFlags: 0
@@ -7303,6 +7341,8 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: 1.045, y: 0.27, z: 0}
   _onBestPosition: 0
+  _group:
+  - {fileID: 1250673460}
 --- !u!60 &1586388806
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7400,6 +7440,8 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: -0.94, y: 0.26, z: -1}
   _onBestPosition: 0
+  _group:
+  - {fileID: 690281855}
 --- !u!60 &1673624698
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7762,6 +7804,7 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: -0.355, y: -1.438, z: 0}
   _onBestPosition: 0
+  _group: []
 --- !u!1 &1708719466
 GameObject:
   m_ObjectHideFlags: 0
@@ -7861,6 +7904,7 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: 0, y: -0.77, z: 0}
   _onBestPosition: 0
+  _group: []
 --- !u!60 &1708719470
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -8054,7 +8098,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1745677118
 Transform:
   m_ObjectHideFlags: 0
@@ -8173,6 +8217,7 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: 0, y: -0.77, z: 0}
   _onBestPosition: 0
+  _group: []
 --- !u!60 &1761599127
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -8406,6 +8451,7 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: 0.81, y: 0.097, z: 0}
   _onBestPosition: 0
+  _group: []
 --- !u!60 &1782072533
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -8656,6 +8702,7 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: -0.869, y: 0.383, z: 0}
   _onBestPosition: 0
+  _group: []
 --- !u!60 &1807536745
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -9066,6 +9113,8 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: -0.978, y: 0.331, z: 0}
   _onBestPosition: 0
+  _group:
+  - {fileID: 390251579}
 --- !u!60 &1887834133
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -9175,7 +9224,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1971124793
 Transform:
   m_ObjectHideFlags: 0
@@ -9430,6 +9479,7 @@ MonoBehaviour:
   _mainController: {fileID: 102411671}
   _bestPosition: {x: 0.26, y: -0.69, z: -1}
   _onBestPosition: 0
+  _group: []
 --- !u!60 &2114415305
 PolygonCollider2D:
   m_ObjectHideFlags: 0

@@ -1,73 +1,82 @@
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 
 public class PuzzlePart : MonoBehaviour
 {
     [SerializeField] private MainController _mainController;
-    [SerializeField] private List<PuzzlePart> _canLeapTo;
     [SerializeField] private Vector3 _bestPosition;
-
-    public PuzzlePartsContainer _container;
-    public Vector3 _containerDistance = Vector3.zero;
+    [SerializeField] private bool _onBestPosition = false;
+    [SerializeField] private PuzzlePart[] _group;
+    private SpriteRenderer _spriteRenderer;
+    private Material _baseMaterial;
 
 
     public void Start()
     {
-        _container = new PuzzlePartsContainer(this);
+        _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        _baseMaterial = _spriteRenderer.material;
+    }
+
+    private Vector3 GetRelatedPosition(Vector3 position)
+    {
+        var result = position - transform.position;
+        result.z = 0;
+        return result;
     }
 
     public Vector3 GetRelatedBestPosition()
     {
-        return _bestPosition - transform.position;
+        return GetRelatedPosition(_bestPosition);
+    }
+
+    private void OnDropBest()
+    {
+        OnMove(_bestPosition);
+        _onBestPosition = true;
+        _mainController.AddPartOnBest();
+        _spriteRenderer.material = _mainController.GetSuccessMaterial();
+        Invoke(nameof(SetBaseMaterial), 0.2f);
     }
 
     public void OnDrop()
     {
-        _container.OnDrop();
-    }
-    
-    public void DropPart()
-    {
-        foreach (PuzzlePart other in _canLeapTo)
+        if (GetRelatedBestPosition().sqrMagnitude < _mainController.GetSqrtDistanceCheck())
         {
-            if ((other.GetRelatedBestPosition() - GetRelatedBestPosition()).sqrMagnitude < _mainController.GetSqrtDistanceCheck())
+            OnDropBest();
+        }
+        else if (_group.Length > 0)
+        {
+            foreach (var groupPuzzlePart in _group)
             {
-                OnMove(_bestPosition - other.GetRelatedBestPosition());
-                MergeContainers(other.gameObject.GetComponent<PuzzlePart>());
+                if (groupPuzzlePart._onBestPosition)
+                {
+                    continue;
+                }
+                var bestPosition = groupPuzzlePart._bestPosition;
+                if (GetRelatedPosition(bestPosition).sqrMagnitude < _mainController.GetSqrtDistanceCheck())
+                {
+                    groupPuzzlePart._bestPosition = _bestPosition;
+                    _bestPosition = bestPosition;
+                    OnDropBest();
+                }
             }
-        }
-    }
-    
-    public void MergeContainers(PuzzlePart otherPuzzlePart)
-    {
-        if (_container.parts.Contains(otherPuzzlePart))
-        {
-            return;
-        }
-        _container.parts.AddRange(otherPuzzlePart._container.parts);
-        foreach (var containerPart in otherPuzzlePart._container.parts)
-        {
-            containerPart._container = _container;
-            containerPart._containerDistance = _containerDistance - _bestPosition + containerPart._bestPosition;
-        }
-
-        if (_container.parts.Count >= _mainController.GetTotalNumberOfParts())
-        {
-            _mainController.EndGame();
         }
     }
 
     public void OnMove(Vector3 touchPosition)
     {
-        _container.OnMove(touchPosition, _containerDistance);
+        touchPosition.z = transform.position.z;
+        transform.position = touchPosition;
     }
 
-    public void MovePart(Vector3 position)
+    public bool CanBeMoved()
     {
-        var positionToMove = position + _containerDistance;
-        positionToMove.z = transform.position.z;
-        transform.position = positionToMove;
+        return !_onBestPosition;
     }
-    
+
+    public void SetBaseMaterial()
+    {
+        _spriteRenderer.material = _baseMaterial;
+    }
 }

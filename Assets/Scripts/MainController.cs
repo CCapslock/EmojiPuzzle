@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 
 public class MainController : MonoBehaviour
 {
+    public AllLevelsParametrs LevelsParametrs;
     public Slider UiSlider;
     public TMP_Text FirstNumberText;
     public TMP_Text SecondNumberText;
+    public SpriteRenderer BackgroundSpriteRenderer;
+    public Sprite[] AllBackgrounds;
 
     [SerializeField] private Text _timer;
     [SerializeField] private GameObject _topPanel;
@@ -21,14 +25,26 @@ public class MainController : MonoBehaviour
 
     [SerializeField] private Material _successMaterial;
 
-    private bool _pause = true;
-    private float _time = 0.0f;
+    private string _prefsLevelsCompletedForUi = "CompletedLevels";
+    private string _prefsLastPlayedLevel = "LastLevel";
+    private string _prefsUsedBackgrounds = "UsedBackground";
 
-    [SerializeField] private List<GameObject> _levels;
-    [SerializeField] private List<int> _levelPartsCount;
+    private float _time = 0.0f;
     private float _sliderValue = 0;
     private int _currentLevel = 0;
     private int _partsOnBest = 0;
+    private bool _pause = true;
+
+    private void Start()
+    {
+        if (PlayerPrefs.GetInt(_prefsLevelsCompletedForUi) == 0)
+        {
+            PlayerPrefs.SetInt(_prefsLevelsCompletedForUi, 1);
+        }
+        LevelsParametrs.CurrentLevel = (PlayerPrefs.GetInt(_prefsLastPlayedLevel));
+        StartGame();
+
+    }
 
     private void Update()
     {
@@ -42,31 +58,43 @@ public class MainController : MonoBehaviour
 
     public void StartGame()
     {
-        _pause = false;
+        ResetSlider();
         _topPanel.SetActive(true);
-        _startMenuPanel.SetActive(false);
-        _levelObjects.SetActive(true);
-
-        UiSlider.maxValue = _levelPartsCount[_currentLevel];
-        UiSlider.value = 0;
-        int num = UnityEngine.Random.Range(2, 16);
-        FirstNumberText.text = num.ToString();
-        SecondNumberText.text = (num+1).ToString();
+        UiSlider.maxValue = LevelsParametrs.Levels[LevelsParametrs.CurrentLevel].LevelPartsCount;
+        _partsOnBest = 0;
+        LevelsParametrs.Levels[LevelsParametrs.CurrentLevel].LevelPrefabOnScene.SetActive(false);
+        _endPanel.SetActive(false);
+        ParticlesManager.Current.PrepareParticles(LevelsParametrs.Levels[LevelsParametrs.CurrentLevel].BigParticle, LevelsParametrs.Levels[LevelsParametrs.CurrentLevel].LittleParticle);
+        _time = 0.0f;
+        LevelsParametrs.Levels[LevelsParametrs.CurrentLevel].LevelPrefabOnScene.SetActive(true);
+        Time.timeScale = 1;
+        ChangeBackground();
     }
 
     public void NextLevel()
     {
+
+        ResetSlider();
         _partsOnBest = 0;
-        _levels[_currentLevel].SetActive(false);
+        LevelsParametrs.Levels[LevelsParametrs.CurrentLevel].LevelPrefabOnScene.SetActive(false);
         _endPanel.SetActive(false);
-        _currentLevel++;
-        if (_currentLevel == _levelPartsCount.Count)
+        LevelsParametrs.CurrentLevel++;
+        if (LevelsParametrs.CurrentLevel == LevelsParametrs.Levels.Count - 1)
         {
+            PlayerPrefs.SetInt(_prefsLastPlayedLevel, 0);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             return;
         }
+        else
+        {
+            PlayerPrefs.SetInt(_prefsLastPlayedLevel, LevelsParametrs.CurrentLevel);
+        }
+        ParticlesManager.Current.PrepareParticles(LevelsParametrs.Levels[LevelsParametrs.CurrentLevel].BigParticle, LevelsParametrs.Levels[LevelsParametrs.CurrentLevel].LittleParticle);
+        UiSlider.maxValue = LevelsParametrs.Levels[LevelsParametrs.CurrentLevel].LevelPartsCount;
         _time = 0.0f;
-        _levels[_currentLevel].SetActive(true);
+        LevelsParametrs.Levels[LevelsParametrs.CurrentLevel].LevelPrefabOnScene.SetActive(true);
         Time.timeScale = 1;
+        ChangeBackground();
     }
 
     public float GetSqrtDistanceCheck()
@@ -76,23 +104,24 @@ public class MainController : MonoBehaviour
 
     public void CheckEndLevel()
     {
-        if (_partsOnBest == _levelPartsCount[_currentLevel])
+        if (_partsOnBest == LevelsParametrs.Levels[LevelsParametrs.CurrentLevel].LevelPartsCount)
         {
+            PlayerPrefs.SetInt(_prefsLevelsCompletedForUi, PlayerPrefs.GetInt(_prefsLevelsCompletedForUi) + 1);
             Invoke(nameof(PlayWinParticles), 0.5f);
-            Invoke(nameof(Pause), 4f);
+            Invoke(nameof(NextLevel), 4f);
             _endPanel.SetActive(true);
         }
     }
     private void PlayWinParticles()
     {
         ParticlesManager.Current.MakeConfettiParticles();
-        ParticlesManager.Current.MakeBigSimpleSmile();
-        ParticlesManager.Current.MakeSimpleSmile(new Vector3(2f, 2f, 0f), true);
-        ParticlesManager.Current.MakeSimpleSmile(new Vector3(2f, -2f, 0f), true);
-        ParticlesManager.Current.MakeSimpleSmile(new Vector3(-2f, 2f, 0f), true);
-        ParticlesManager.Current.MakeSimpleSmile(new Vector3(-2f, -2f, 0f), true);
-        ParticlesManager.Current.MakeSimpleSmile(new Vector3(-2f, 0f, 0f), true);
-        ParticlesManager.Current.MakeSimpleSmile(new Vector3(2f, 0f, 0f), true);
+        ParticlesManager.Current.MakeBigParticle();
+        ParticlesManager.Current.MakeLittleParticle(new Vector3(2f, 2f, 0f), true);
+        ParticlesManager.Current.MakeLittleParticle(new Vector3(2f, -2f, 0f), true);
+        ParticlesManager.Current.MakeLittleParticle(new Vector3(-2f, 2f, 0f), true);
+        ParticlesManager.Current.MakeLittleParticle(new Vector3(-2f, -2f, 0f), true);
+        ParticlesManager.Current.MakeLittleParticle(new Vector3(-2f, 0f, 0f), true);
+        ParticlesManager.Current.MakeLittleParticle(new Vector3(2f, 0f, 0f), true);
     }
     public void AddPartOnBest()
     {
@@ -122,4 +151,40 @@ public class MainController : MonoBehaviour
         _sliderValue += 0.01f;
         UiSlider.value = _sliderValue;
     }
+    private void ResetSlider()
+    {
+        _sliderValue = 0;
+        UiSlider.value = _sliderValue;
+        FirstNumberText.text = PlayerPrefs.GetInt(_prefsLevelsCompletedForUi).ToString();
+        SecondNumberText.text = (PlayerPrefs.GetInt(_prefsLevelsCompletedForUi) + 1).ToString();
+    }
+    private void ChangeBackground()
+    {
+        if (PlayerPrefs.GetInt(_prefsUsedBackgrounds) < AllBackgrounds.Length)
+        {
+            BackgroundSpriteRenderer.sprite = AllBackgrounds[PlayerPrefs.GetInt(_prefsUsedBackgrounds)];
+            PlayerPrefs.SetInt(_prefsUsedBackgrounds, PlayerPrefs.GetInt(_prefsUsedBackgrounds) + 1);
+        }
+        else
+        {
+            PlayerPrefs.SetInt(_prefsUsedBackgrounds, 0);
+            BackgroundSpriteRenderer.sprite = AllBackgrounds[PlayerPrefs.GetInt(_prefsUsedBackgrounds)];
+        }
+    }
+}
+
+[Serializable]
+public class AllLevelsParametrs
+{
+    public int CurrentLevel;
+    public List<SingleLevelParam> Levels;
+}
+
+[Serializable]
+public class SingleLevelParam
+{
+    public GameObject LevelPrefabOnScene;
+    public int LevelPartsCount;
+    public ParticleSystem BigParticle;
+    public ParticleSystem LittleParticle;
 }

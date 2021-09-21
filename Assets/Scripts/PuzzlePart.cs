@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 
@@ -32,6 +31,7 @@ public class PuzzlePart : MonoBehaviour
 
     private void OnDropBest()
     {
+        GetComponent<Collider2D>().enabled = false;
         OnMove(_bestPosition);
         _onBestPosition = true;
         _mainController.AddPartOnBest();

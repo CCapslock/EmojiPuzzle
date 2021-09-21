@@ -9,44 +9,50 @@ public class ParticlesManager : MonoBehaviour
     private ParticleSystem _confettiParticles;
 
     public ParticleSystem BigSimpleSmileParticles;
-    private ParticleSystem _bigSimpleSmile;
+    private ParticleSystem _bigParticle;
 
     public ParticleSystem SimpleSmileParticles;
-    private ParticleSystem[] _simpleSmile;
+    private ParticleSystem[] _emojiParticle;
 
     private void Awake()
     {
         Current = this;
-        _simpleSmile = new ParticleSystem[10];
-        _bigSimpleSmile = Instantiate(BigSimpleSmileParticles, new Vector3(0, -10, 0f), Quaternion.Euler(new Vector3(-90f, 0, 0)));
         _confettiParticles = Instantiate(ConfettiParticles, new Vector3(0, -10, 0f), Quaternion.Euler(new Vector3(-90f, 0, 0)));
-        for (int i = 0; i < _simpleSmile.Length; i++)
+        PrepareParticles(BigSimpleSmileParticles, SimpleSmileParticles);
+    }
+
+    public void PrepareParticles(ParticleSystem bigParticle, ParticleSystem particles)
+    {
+        _bigParticle = Instantiate(bigParticle, new Vector3(0, -10, 0f), Quaternion.Euler(new Vector3(-90f, 0, 0)));
+        _emojiParticle = new ParticleSystem[10];
+        for (int i = 0; i < _emojiParticle.Length; i++)
         {
-            _simpleSmile[i] = Instantiate(SimpleSmileParticles, new Vector3(0, -10, 0f), Quaternion.Euler(new Vector3(-90f, 0, 0)));
+            _emojiParticle[i] = Instantiate(particles, new Vector3(0, -10, 0f), Quaternion.Euler(new Vector3(-90f, 0, 0)));
         }
     }
-    public void MakeSimpleSmile(Vector3 position, bool isRandom)
+
+    public void MakeLittleParticle(Vector3 position, bool isRandom)
     {
         if (!isRandom)
         {
-            for (int i = 0; i < _simpleSmile.Length; i++)
+            for (int i = 0; i < _emojiParticle.Length; i++)
             {
-                if (!_simpleSmile[i].isPlaying || i == _simpleSmile.Length - 1)
+                if (!_emojiParticle[i].isPlaying || i == _emojiParticle.Length - 1)
                 {
-                    _simpleSmile[i].transform.position = position;
-                    _simpleSmile[i].Play();
+                    _emojiParticle[i].transform.position = position;
+                    _emojiParticle[i].Play();
                     break;
                 }
             }
         }
         else
         {
-            for (int i = 0; i < _simpleSmile.Length; i++)
+            for (int i = 0; i < _emojiParticle.Length; i++)
             {
-                if (!_simpleSmile[i].isPlaying || i == _simpleSmile.Length - 1)
+                if (!_emojiParticle[i].isPlaying || i == _emojiParticle.Length - 1)
                 {
-                    _simpleSmile[i].Play();
-                    StartCoroutine(MakeRandomParticle(i, position, _simpleSmile));
+                    _emojiParticle[i].Play();
+                    StartCoroutine(MakeRandomParticle(i, position, _emojiParticle));
                     break;
                 }
             }
@@ -59,10 +65,10 @@ public class ParticlesManager : MonoBehaviour
         particles[num].transform.position = position + new Vector3(Random.Range(-0.8f, 0.8f), Random.Range(-0.8f, 0.8f), 0f);
         particles[num].Play();
     }
-    public void MakeBigSimpleSmile()
+    public void MakeBigParticle()
     {
-        _bigSimpleSmile.transform.position = new Vector3(-50f, 0, 0);
-        _bigSimpleSmile.Play();
+        _bigParticle.transform.position = new Vector3(-50f, 0, 0);
+        _bigParticle.Play();
     }
     public void MakeConfettiParticles()
     {

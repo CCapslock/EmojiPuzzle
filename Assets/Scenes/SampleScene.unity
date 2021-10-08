@@ -149,13 +149,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 32356605}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.9, y: 0.858, z: 0}
+  m_LocalRotation: {x: -0.012978016, y: 0.026527256, z: -0.0059298077, w: 0.9995463}
+  m_LocalPosition: {x: -0.905, y: 0.278, z: 0.103}
   m_LocalScale: {x: 0.45, y: 0.45, z: 1}
   m_Children: []
   m_Father: {fileID: 921732994}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -1.469, y: 3.05, z: -0.719}
 --- !u!212 &32356607
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -195,7 +195,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 446443111d834a74d8e23606b1429623, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -278,7 +278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainController: {fileID: 102411671}
-  _bestPosition: {x: 0.9, y: 0.858, z: 0}
+  _bestPosition: {x: 0.791, y: 0.806, z: 0}
   _onBestPosition: 0
   _group: []
 --- !u!1 &32379135
@@ -705,6 +705,14 @@ MonoBehaviour:
       LevelPartsCount: 6
       BigParticle: {fileID: 19886952, guid: e5b27240433223146bc31d05da6cf73e, type: 3}
       LittleParticle: {fileID: 19886952, guid: 579f4fdf289cbd14e893e6bdc258ec64, type: 3}
+    - LevelPrefabOnScene: {fileID: 916353974}
+      LevelPartsCount: 3
+      BigParticle: {fileID: 19800326, guid: 42beb7f3a60b6384395597a85a6899ca, type: 3}
+      LittleParticle: {fileID: 19800326, guid: 9e3b6489a85bfa04e844964c8c1e12ed, type: 3}
+    - LevelPrefabOnScene: {fileID: 921732993}
+      LevelPartsCount: 6
+      BigParticle: {fileID: 19881692, guid: ff7401ec73fbbe94882641119c800b08, type: 3}
+      LittleParticle: {fileID: 19848934, guid: 176caf7be2d423d4d85c6109f36b8ee3, type: 3}
     - LevelPrefabOnScene: {fileID: 1827754129}
       LevelPartsCount: 4
       BigParticle: {fileID: 19878724, guid: ce9cf1a067e6a344794e1f280944d4cb, type: 3}
@@ -721,10 +729,6 @@ MonoBehaviour:
       LevelPartsCount: 5
       BigParticle: {fileID: 198176730742096494, guid: 030f9642fc93ab54c8981d208c50c406, type: 3}
       LittleParticle: {fileID: 198176730742096494, guid: deee6d895acb70643b8cfa1e60b70e8f, type: 3}
-    - LevelPrefabOnScene: {fileID: 916353974}
-      LevelPartsCount: 3
-      BigParticle: {fileID: 19800326, guid: 42beb7f3a60b6384395597a85a6899ca, type: 3}
-      LittleParticle: {fileID: 19800326, guid: 9e3b6489a85bfa04e844964c8c1e12ed, type: 3}
   UiSlider: {fileID: 1200606102}
   FirstNumberText: {fileID: 961422672}
   SecondNumberText: {fileID: 961422671}
@@ -740,7 +744,7 @@ MonoBehaviour:
   _startMenuPanel: {fileID: 2069863621}
   _levelObjects: {fileID: 1711182888}
   _endPanel: {fileID: 1234266339}
-  _sqrtDistanceCheck: 0.35
+  _sqrtDistanceCheck: 0.25
   _successMaterial: {fileID: 2100000, guid: 287f5b2bfd0de61449a5e6766b4470c3, type: 2}
 --- !u!1 &105955353
 GameObject:
@@ -1297,7 +1301,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 251896591}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.027, y: 0.277, z: 0}
+  m_LocalPosition: {x: 1, y: 0.31, z: -0.02}
   m_LocalScale: {x: 0.45, y: 0.45, z: 1}
   m_Children: []
   m_Father: {fileID: 921732994}
@@ -1414,7 +1418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainController: {fileID: 102411671}
-  _bestPosition: {x: -1.027, y: 0.277, z: 0}
+  _bestPosition: {x: -0.86, y: 0.38, z: 0}
   _onBestPosition: 0
   _group:
   - {fileID: 1154735755}
@@ -3083,13 +3087,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 743315736}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.878, z: 0}
+  m_LocalRotation: {x: 0.006976252, y: -0.009789241, z: -0.04317027, w: 0.9989954}
+  m_LocalPosition: {x: 0.099, y: 1.12, z: 0.025}
   m_LocalScale: {x: 0.45, y: 0.45, z: 1}
   m_Children: []
   m_Father: {fileID: 921732994}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.75, y: -1.155, z: -4.956}
 --- !u!212 &743315738
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3188,7 +3192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainController: {fileID: 102411671}
-  _bestPosition: {x: 0, y: -0.878, z: 0}
+  _bestPosition: {x: 0.11, y: -0.79, z: 0}
   _onBestPosition: 0
   _group: []
 --- !u!1 &771459417
@@ -4721,13 +4725,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993511746}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.81, y: 0.746, z: 0}
+  m_LocalRotation: {x: 0.049001742, y: -0.08187711, z: 0.29103878, w: 0.9519409}
+  m_LocalPosition: {x: -0.743, y: -0.704, z: -0.100999996}
   m_LocalScale: {x: 0.45, y: 0.45, z: 1}
   m_Children: []
   m_Father: {fileID: 921732994}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 8.103, y: -7.391, z: 33.476}
 --- !u!212 &993511748
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4847,7 +4851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainController: {fileID: 102411671}
-  _bestPosition: {x: -0.81, y: 0.746, z: 0}
+  _bestPosition: {x: -0.887, y: 1.006, z: 0}
   _onBestPosition: 0
   _group: []
 --- !u!1 &1011683034
@@ -5225,13 +5229,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1154735751}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.027, y: 0.277, z: 0}
+  m_LocalRotation: {x: 0.000019644389, y: -0.00003280171, z: 0.0001166236, w: 1}
+  m_LocalPosition: {x: 1, y: -0.707, z: 0}
   m_LocalScale: {x: 0.45, y: 0.45, z: 1}
   m_Children: []
   m_Father: {fileID: 921732994}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.002, y: -0.004, z: 0.013}
 --- !u!212 &1154735753
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5344,7 +5348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainController: {fileID: 102411671}
-  _bestPosition: {x: 1.027, y: 0.277, z: 0}
+  _bestPosition: {x: 0.861, y: 0.326, z: 0}
   _onBestPosition: 0
   _group:
   - {fileID: 251896595}
@@ -7621,7 +7625,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687711469}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.355, y: -1.438, z: 0}
+  m_LocalPosition: {x: 1.665, y: 2.199, z: 0}
   m_LocalScale: {x: 0.45, y: 0.45, z: 1}
   m_Children: []
   m_Father: {fileID: 921732994}
@@ -7833,7 +7837,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainController: {fileID: 102411671}
-  _bestPosition: {x: -0.355, y: -1.438, z: 0}
+  _bestPosition: {x: -0.355, y: -1.64, z: 0}
   _onBestPosition: 0
   _group: []
 --- !u!1 &1708719466

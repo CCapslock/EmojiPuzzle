@@ -25,8 +25,8 @@ public class MainController : MonoBehaviour
 
     [SerializeField] private Material _successMaterial;
 
-    private string _prefsLevelsCompletedForUi = "CompletedLevels";
-    private string _prefsLastPlayedLevel = "LastLevel";
+    private string _prefsLevelsCompletedForUi = "CompletedLevel";
+    private string _prefsLastPlayedLevel = "LastLevels";
     private string _prefsUsedBackgrounds = "UsedBackground";
 
     private float _time = 0.0f;
